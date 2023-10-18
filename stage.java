@@ -8,11 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class stage extends World
 {
-
-    /**
-     * Constructor for objects of class stage.
-     * 
-     */
+    private BIRD bird;
+    private int cloudSpawnTimer = 100;
+    private int actCycle = 0;
+    
     public stage()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -22,4 +21,22 @@ public class stage extends World
         
         addObject(flappy, 100, getHeight()/2);
     }
+    
+    public void act(){
+        actCycle++;
+        
+        if (actCycle % cloudSpawnTimer == 0) {
+            spawnCloud();
+    }
+
+    
+    }   
+
+    private void spawnCloud() {
+        cloud cloud = new cloud();
+        int y = Greenfoot.getRandomNumber(getHeight() / 3);
+        addObject(cloud, getWidth(), y);
+        
+    }
+
 }

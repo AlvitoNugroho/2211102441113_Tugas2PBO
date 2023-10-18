@@ -10,7 +10,7 @@ public class cloud extends Actor
 {
 public cloud(){
     GreenfootImage image = getImage();
-        image.scale(500, 300);
+        image.scale(200, 90);
 }
     /**
      * Act - do whatever the cloud wants to do. This method is called whenever
